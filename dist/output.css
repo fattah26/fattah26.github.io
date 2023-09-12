@@ -584,6 +584,10 @@ video {
   bottom: -1.75rem;
 }
 
+.-right-5 {
+  right: -1.25rem;
+}
+
 .left-1\/2 {
   left: 50%;
 }
@@ -592,12 +596,12 @@ video {
   right: 1rem;
 }
 
-.top-0 {
-  top: 0px;
+.right-48 {
+  right: 12rem;
 }
 
-.top-full {
-  top: 100%;
+.top-0 {
+  top: 0px;
 }
 
 .-z-10 {
@@ -606,6 +610,14 @@ video {
 
 .z-10 {
   z-index: 10;
+}
+
+.z-50 {
+  z-index: 50;
+}
+
+.float-left {
+  float: left;
 }
 
 .mx-8 {
@@ -670,6 +682,10 @@ video {
   margin-top: 2.5rem;
 }
 
+.mt-14 {
+  margin-top: 3.5rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -698,8 +714,16 @@ video {
   height: 13rem;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .h-9 {
   height: 2.25rem;
+}
+
+.h-\[100vh\] {
+  height: 100vh;
 }
 
 .min-h-screen {
@@ -718,8 +742,16 @@ video {
   width: 9rem;
 }
 
+.w-4\/6 {
+  width: 66.666667%;
+}
+
 .w-5\/6 {
   width: 83.333333%;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .w-9 {
@@ -728,10 +760,6 @@ video {
 
 .w-\[300px\] {
   width: 300px;
-}
-
-.w-auto {
-  width: auto;
 }
 
 .w-full {
@@ -841,6 +869,16 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-blue-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(191 219 254 / var(--tw-bg-opacity));
+}
+
+.bg-blue-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+
 .fill-current {
   fill: currentColor;
 }
@@ -857,11 +895,6 @@ video {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
-}
-
-.py-2 {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
 }
 
 .py-3 {
@@ -1006,8 +1039,16 @@ video {
   transition-duration: 150ms;
 }
 
+.duration-200 {
+  transition-duration: 200ms;
+}
+
 .duration-300 {
   transition-duration: 300ms;
+}
+
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .ease-in-out {
@@ -1041,24 +1082,51 @@ body{
   background-color: rgb(8 47 73 / var(--tw-bg-opacity));
 }
 
-.hamburger-active > span:nth-child(1) {
-  --tw-rotate: 45deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.hamburger-x {
+  margin-top: 0.375rem;
+  margin-bottom: 0.375rem;
+  display: block;
+  height: 3px;
+  width: 28px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(8 47 73 / var(--tw-bg-opacity));
+}
+
+/* .hamburger-active > span:nth-child(1) {
+    @apply rotate-45;
 }
 
 .hamburger-active > span:nth-child(2) {
-  --tw-scale-x: 0;
-  --tw-scale-y: 0;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    @apply scale-0;
 }
 
 .hamburger-active > span:nth-child(3) {
-  --tw-rotate: -45deg;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
+    @apply  -rotate-45;
+} */
 
 html {
   scroll-behavior: smooth;
+}
+
+#nav-menu {
+  opacity: 0;
+  transform: translateX(100%);
+  /* Ubah ini menjadi translateX(0) saat menu dibuka */
+  transition: opacity 0.5s ease, transform 0.5s ease-in-out;
+}
+
+/* Tambahkan style untuk navbar pada tampilan "lg" */
+
+@media (min-width: 1024px) {
+  #nav-menu {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    position: static !important;
+    max-width: none !important;
+    box-shadow: none !important;
+  }
 }
 
 .hover\:border-primary:hover {
@@ -1079,6 +1147,11 @@ html {
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.hover\:text-dark:hover {
+  --tw-text-opacity: 1;
+  color: rgb(8 47 73 / var(--tw-text-opacity));
 }
 
 .hover\:opacity-80:hover {
@@ -1121,12 +1194,20 @@ html {
     bottom: -1.75rem;
   }
 
+  .lg\:right-4 {
+    right: 1rem;
+  }
+
   .lg\:-ml-3 {
     margin-left: -0.75rem;
   }
 
   .lg\:-mt-36 {
     margin-top: -9rem;
+  }
+
+  .lg\:mt-0 {
+    margin-top: 0px;
   }
 
   .lg\:mt-9 {
@@ -1149,8 +1230,16 @@ html {
     height: 16rem;
   }
 
+  .lg\:h-auto {
+    height: auto;
+  }
+
   .lg\:w-1\/2 {
     width: 50%;
+  }
+
+  .lg\:w-auto {
+    width: auto;
   }
 
   .lg\:max-w-full {
@@ -1214,5 +1303,7 @@ html {
     width: 83.333333%;
   }
 }
+
+
 
 

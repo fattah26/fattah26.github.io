@@ -14,11 +14,19 @@ body{
     
 }
 
+
 .hamburger-line {
     @apply w-[28px] h-[3px] my-1.5 block bg-dark;
 }
 
-.hamburger-active > span:nth-child(1) {
+.hamburger-x {
+    @apply w-[28px] h-[3px] my-1.5 block bg-dark;
+}
+
+
+
+
+/* .hamburger-active > span:nth-child(1) {
     @apply rotate-45;
 }
 
@@ -28,10 +36,31 @@ body{
 
 .hamburger-active > span:nth-child(3) {
     @apply  -rotate-45;
-}
+} */
 
 html {
     scroll-behavior: smooth;
   }
+
+  #nav-menu {
+    opacity: 0;
+    transform: translateX(100%); /* Ubah ini menjadi translateX(0) saat menu dibuka */
+    transition: opacity 0.5s ease, transform 0.5s ease-in-out;
+}
+
+/* Tambahkan style untuk navbar pada tampilan "lg" */
+@media (min-width: 1024px) {
+    #nav-menu {
+        display: block !important;
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+        position: static !important;
+        max-width: none !important;
+        box-shadow: none !important;
+    }
+}
+
+
 
 
