@@ -1535,6 +1535,10 @@ html {
     margin-top: -2.5rem;
   }
 
+  .lg\:mt-10 {
+    margin-top: 2.5rem;
+  }
+
   .lg\:block {
     display: block;
   }
