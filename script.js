@@ -71,17 +71,6 @@ hamburger.addEventListener('click', function () {
 //     }
 // });
 
-
-
-
-
-
-
-
-
-
-
-
 // Name
 const words = ["Fattah Arif Nugroho."];
 
@@ -103,3 +92,11 @@ words.forEach(word => {
 });
 
 // let cursor = gsap.to('.cursor', {opacity:0, ease:"power2.inOut", repeat: -1})
+
+
+// AOS
+AOS.init({
+    duration: 800, // Durasi animasi dalam milidetik
+    easing: 'ease-in-out', // Jenis easing (misalnya: 'ease', 'linear', 'ease-in-out', dll.)
+    once: false // Animasi hanya akan dimainkan sekali saat elemen pertama kali muncul
+  });

@@ -45,7 +45,7 @@
                             </li>
 
                             <li class="group">
-                                <a href="#home" class="text-lg font-semibold text-white py-5 mx-8 flex hover:text-dark lg:py-3 lg:text-dark lg:hover:text-primary">Contact</a>
+                                <a href="#contact" class="text-lg font-semibold text-white py-5 mx-8 flex hover:text-dark lg:py-3 lg:text-dark lg:hover:text-primary">Kontak</a>
                             </li>
                         </ul>
                     </nav>
@@ -59,8 +59,8 @@
     <section id="home" class="pt-36 h-[100vh]">
         <div class="container pl-10 lg:mt-10">
             <div class="flex flex-wrap ">
-                <div class="w-full self-center px-4 lg:w-1/2">
-                    <h1 class="text-base font-semibold text-primary md:text-xl">Hello 👋 , i'm </h1>
+                <div class="w-full self-center px-4 lg:w-1/2" data-aos="fade-right">
+                    <h1 class="text-base font-semibold text-primary md:text-xl">Halo 👋 , saya </h1>
                     <h1>
                         <span class="font-bold text-dark text-3xl mt-1 lg:text-5xl " id="typed-text"></span>
                         <span class="cursor font-bold text-dark text-4xl mt-1 lg:text-5xl">_</span>
@@ -75,7 +75,7 @@
                        hover:shadow-lg hover:opacity-80 transition duration-300 ease-in-out">Download CV</a> 
                 </div>
 
-                <div class="w-full self-end px-4 lg:w-1/2">
+                <div class="w-full self-end px-4 lg:w-1/2" data-aos="fade-left">
                     <div class="mt-10 relative lg:mt-9">
                         <img src="dist/img/profile.jpg" alt="" class="w-[250px] rounded-full mx-auto mt-14 lg:w-[350px] lg:-mt-10 lg:max-w-sm">
                         <span class="absolute -bottom-7 -z-10 left-1/2 -translate-x-1/2 md:scale-125 lg:-bottom-7">
@@ -95,11 +95,11 @@
 
     <!-- About Section -->
     <section id="about" class="mt-10 pt-20 pb-20 lg:pt-36 h-[100vh]">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <div class="flex flex-wrap">
                 <div class="w-full px-4 mb-10 lg:w-1/2">
                     <h4 class="font-bold uppercase text-primary 
-                    text-lg mb-3 lg:text-2xl">About Me</h4>
+                    text-lg mb-3 lg:text-2xl">Tentang Saya</h4>
                     <!-- <h2 class="font-bold text-dark text-3xl mb-5 max-w-xl lg:text-4xl">I'm Fattah Arif Nugroho</h2> -->
                     <p class="font-medium text-base text-secondary max-w-xl lg:text-lg text-justify">Saya seorang pelajar dan frontend developer pemula dari Semarang.
                         Tugas saya adalah membangun situs web Anda agar berfungsi dan ramah pengguna. Selain itu, saya menambahkan sentuhan pribadi pada produk Anda dan memastikannya menarik serta mudah digunakan.
@@ -136,7 +136,7 @@
                     </div>
                 </div>
 
-                <div class="w-full px-4 lg:w-1/2" >
+                <div class="w-full px-4 lg:w-1/2">
                         <h3 class="font-semibold text-dark text-2xl mb-4 lg:text-2xl ">Keahlian Saya</h3>
                         <div class="border border-dark font-semibold text-xl rounded-md p-4 pb-10 w-52 m-auto mt-5  lg:w-auto">
                                 <p class="font-semibold text-lg text-primary text-center mb-5 z-10 lg:text-xl">Frontend</p>
@@ -163,7 +163,7 @@
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="pt-20 pb-28 lg:pt-36 min-h-screen bg-slate-200">
-        <div class="container">
+        <div class="container" data-aos="fade-up">
             <div class="w-full px-4">
                 <div class="max-w-xl mx-auto text-center mb-12">
                     <h4 class="text-lg text-primary font-semibold mb-2 lg:text-2xl">Portfolio</h4>
@@ -189,7 +189,46 @@
     <!-- Portfolio Section -->
 
     <!-- Contact Section -->
+    <section id="contact" class="pb-20 pt-28">
+        <div class="container">
+            <div class="w-full px-4">
+                <div class="max-w-xl mx-auto text-center mb-12">
+                    <h4 class="text-lg text-primary font-semibold mb-2 lg:text-2xl">Kontak</h4>
+                    <h2 class="font-bold text-3xl mb-4 text-dark">Hubungi Saya</h2>
+                    <!-- <p class="text-medium text-md text-secondary">Kumpulan peroject website saya</p> -->
+                </div>
+            </div>
 
+            <form>
+                <div class="w-full lg:w-2/3 lg:mx-auto">
+                    <div class="w-full px-4 mb-8">
+                        <label for="nama" class="text-base font-bold text-primary">Nama</label>
+                        <input type="text" id="nama" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
+                    </div>
+
+                    <!--  -->
+
+                    <div class="w-full px-4 mb-8">
+                        <label for="email" class="text-base font-bold text-primary">Email</label>
+                        <input type="text" id="email" class="w-full bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary">
+                    </div>
+
+                    <!--  -->
+
+                    <div class="w-full px-4 mb-8">
+                        <label for="pesan" class="text-base font-bold text-primary">Pesan</label>
+                        <textarea type="text" id="pesan" class="w-full h-32 bg-slate-200 text-dark p-3 rounded-md focus:outline-none focus:ring-primary focus:ring-1 focus:border-primary"></textarea>
+                    </div>
+
+                    <!-- Button -->
+                    <div class="w-full px-4">
+                        <button class="text-base font-semibold text-white bg-primary py-3  px-8 rounded-full w-full hover:opacity-80 hover:shadow-lg transition duration-500">Kirim</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
     <!-- Contact Section -->
 
     <!-- Footer -->
@@ -220,7 +259,7 @@
                         </li>
 
                         <li>
-                            <a href="#home" class="inline-block text-base hover:text-primary mb-3">Contact</a>
+                            <a href="#contact" class="inline-block text-base hover:text-primary mb-3">Kontak</a>
                         </li>
                     </ul>
                 </div>
