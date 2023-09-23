@@ -71,8 +71,9 @@ hamburger.addEventListener('click', function () {
 //     }
 // });
 
+
 // Name
-const words = ["Fattah Arif Nugroho."];
+const words = ["Fattah Arif Nugroho", "Pelajar", "Front End Dev"];
 
 gsap.to('.cursor', {
     opacity: 0,
@@ -100,3 +101,50 @@ AOS.init({
     easing: 'ease-in-out', // Jenis easing (misalnya: 'ease', 'linear', 'ease-in-out', dll.)
     once: false // Animasi hanya akan dimainkan sekali saat elemen pertama kali muncul
   });
+
+
+// Alert
+const closeButton = document.querySelector('.close-btn');
+const alert = closeButton.closest('.my-alert-sukses','.my-alert-error');
+
+
+closeButton.addEventListener('click', function () {
+  alert.style.display = 'none';
+});
+
+
+// Kontak Form
+const scriptURL = 'https://script.google.com/macros/s/AKfycbzpaeISDHBQyYO6DvW_TaBLcwM1tvF3Fz1qWU2pAObUjWcfVzxPyBMO8Un3uzXt5JWI/exec';
+const form = document.forms['portofolio-contact-form'];
+const btnKirim = document.querySelector('.btn-kirim');
+const btnLoading = document.querySelector('.btn-loading');
+const myAlert = document.querySelector('.my-alert-sukses');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  btnLoading.classList.toggle('hidden');
+  btnKirim.classList.toggle('hidden');
+  
+  // Reset Alert
+  if (!myAlert.classList.contains('hidden')) {
+    myAlert.style.display = 'none';
+  }
+
+  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+    .then(response => {
+      console.log('Success!', response);
+      btnLoading.classList.toggle('hidden');
+      btnKirim.classList.toggle('hidden');
+
+      // Show Alert
+      myAlert.style.display = 'block';
+
+      // Reset Form
+      form.reset();
+    })
+    .catch(error => console.error('Error!', error.message));
+});
+
+
+
+
