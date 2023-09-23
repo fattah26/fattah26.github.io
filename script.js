@@ -104,13 +104,22 @@ AOS.init({
 
 
 // Alert
-const closeButton = document.querySelector('.close-btn');
-const alert = closeButton.closest('.my-alert-sukses','.my-alert-error');
 
+const closeButtonSuccess = document.querySelector('.my-alert-sukses .close-btn');
+const closeButtonError = document.querySelector('.my-alert-error .close-btn');
+const alertSuccess = document.querySelector('.my-alert-sukses');
+const alertError = document.querySelector('.my-alert-error');
 
-closeButton.addEventListener('click', function () {
-  alert.style.display = 'none';
+closeButtonSuccess.addEventListener('click', function () {
+  alertSuccess.style.display = 'none';
 });
+
+closeButtonError.addEventListener('click', function () {
+  alertError.style.display = 'none';
+});
+
+
+
 
 
 // Kontak Form
@@ -118,17 +127,30 @@ const scriptURL = 'https://script.google.com/macros/s/AKfycbzpaeISDHBQyYO6DvW_Ta
 const form = document.forms['portofolio-contact-form'];
 const btnKirim = document.querySelector('.btn-kirim');
 const btnLoading = document.querySelector('.btn-loading');
-const myAlert = document.querySelector('.my-alert-sukses');
+const myAlertSuccess = document.querySelector('.my-alert-sukses');
+const myAlertError = document.querySelector('.my-alert-error');
 
 form.addEventListener('submit', e => {
   e.preventDefault();
+
+  // Check if any field is empty
+  const nama = form.elements['Nama'].value;
+  const email = form.elements['Email'].value;
+  const pesan = form.elements['Pesan'].value;
+
+  if (nama === '' || email === '' || pesan === '') {
+    // Show Error Alert
+    myAlertSuccess.style.display = 'none';
+    myAlertError.style.display = 'block';
+    return;
+  }
+
   btnLoading.classList.toggle('hidden');
   btnKirim.classList.toggle('hidden');
-  
-  // Reset Alert
-  if (!myAlert.classList.contains('hidden')) {
-    myAlert.style.display = 'none';
-  }
+
+  // Reset Alerts
+  myAlertSuccess.style.display = 'none';
+  myAlertError.style.display = 'none';
 
   fetch(scriptURL, { method: 'POST', body: new FormData(form) })
     .then(response => {
@@ -136,15 +158,17 @@ form.addEventListener('submit', e => {
       btnLoading.classList.toggle('hidden');
       btnKirim.classList.toggle('hidden');
 
-      // Show Alert
-      myAlert.style.display = 'block';
+      // Show Success Alert
+      myAlertSuccess.style.display = 'block';
 
       // Reset Form
       form.reset();
     })
-    .catch(error => console.error('Error!', error.message));
+    .catch(error => {
+      console.error('Error!', error.message);
+
+      // Show Error Alert
+      myAlertSuccess.style.display = 'none';
+      myAlertError.style.display = 'block';
+    });
 });
-
-
-
-
