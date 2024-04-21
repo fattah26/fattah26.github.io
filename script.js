@@ -73,7 +73,7 @@ hamburger.addEventListener('click', function () {
 
 
 // Name
-const words = ["Fattah Arif Nugroho", "Pelajar", "Front End Dev"];
+const words = ["Fattah Arif Nugroho", "Pelajar", "Front End Dev","UI/UX Design"];
 
 gsap.to('.cursor', {
     opacity: 0,
