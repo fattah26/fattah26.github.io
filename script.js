@@ -147,6 +147,7 @@ form.addEventListener('submit', e => {
 
   btnLoading.classList.toggle('hidden');
   btnKirim.classList.toggle('hidden');
+  
 
   // Reset Alerts
   myAlertSuccess.style.display = 'none';
